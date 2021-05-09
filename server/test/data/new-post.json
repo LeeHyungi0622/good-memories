@@ -1,0 +1,9 @@
+{
+    "title": "New Post",
+    "message": "Post Message",
+    "creator": "Lee Hyungi",
+    "tags": ["Tag1", "Tag2"],
+    "selectedFile": "1.jpg",
+    "likeCount": 0,
+    "createdAt": "2021-05-09"
+}
