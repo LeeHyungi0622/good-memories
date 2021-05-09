@@ -51,7 +51,7 @@
 
 **(1) Issue1) Initial setup for project**
 
-→
+→ [https://github.com/LeeHyungi0622/good-memories/issues/1](https://github.com/LeeHyungi0622/good-memories/issues/1)
 
 # **Project Screen Shots**
 
