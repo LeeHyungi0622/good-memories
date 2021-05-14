@@ -26,20 +26,20 @@ describe('Product Controller Create', () => {
     beforeEach(() => {
         req.body = newPost;
     });
-    test('createPost 함수가 존재한다.(Controller)', () => {
-        expect(typeof createPost).toBe('function');
+    test('createPost 함수가 존재한다.(Controller)', async() => {
+        expect(typeof await createPost).toBe('function');
     });
-    test('createPost 함수가 호출되어야 한다.', () => {
-        createPost(req, res);
+    test('createPost 함수가 호출되어야 한다.', async() => {
+        await createPost(req, res);
         expect(PostMessage.create).toBeCalledWith(newPost);
     });
-    test('200 response code가 반환된다.', () => {
-        createPost(req, res);
+    test('200 response code가 반환된다.', async() => {
+        await createPost(req, res);
         expect(res.statusCode).toBe(201);
     });
-    test('response과 함께 json이 반환된다.', () => {
+    test('response과 함께 json이 반환된다.', async() => {
         PostMessage.create.mockReturnValue(newPost);
-        createPost(req, res);
+        await createPost(req, res);
         expect(res._getJSONData()).toStrictEqual(newPost);
     });
 });
