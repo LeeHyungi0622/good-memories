@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import styled from 'styled-components';
 import Posts from './components/Posts/Posts';
-import Form from './components/Form/Form';
+import Form from './components/Form';
 import GlobalStyles from './GlobalStyles';
 import mainLogo from './images/good_memories.jpeg';
 
@@ -29,7 +29,7 @@ const Title = styled(Typography)`
 `;
 
 const MainWrapper = styled(Container)`
-    margin: 30px;
+    margin: 25px 0 0 0;
 `;
 
 const App = () => {

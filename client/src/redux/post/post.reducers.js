@@ -4,7 +4,7 @@ export const postReducer = (posts = [], action) => {
     switch (action.type) {
         case postActionTypes.FETCH_ALL:
             {
-                return posts;
+                return action.payload;
             }
         case postActionTypes.CREATE:
             {
