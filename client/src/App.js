@@ -1,68 +1,57 @@
 import React from 'react';
+import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import styled from 'styled-components';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import GlobalStyles from './GlobalStyles';
+import mainLogo from './images/good_memories.jpeg';
 
-const Container = styled.div`
-    border: 1px solid black;
-    background-color: blue;
-`;
 
-const Header = styled.header`
-    border: 1px solid black;
-    background-color: yellow;
-`;
-
-const Logo = styled.img`
-    border: 1px solid black;
-    background-color: green;
-`;
-
-const Title = styled.h2`
-    border: 1px solid black;
-    background-color: pink;
-    text-align: center;
-`;
-
-const ContentsContainer = styled.main`
+const SAppBar = styled(AppBar)`
+    position: static;
     display: flex;
-    border: 1px solid black;
-    background-color: mintcream;
-    height: 100vh;
+    background: white;
+    width: 100%;
+    color: inherit;
+    border-radius: 15;
+    & > img {
+        display: inline-block;
+        height: 200px;
+        margin: 0 auto;
+        text-align: center;
+    }
 `;
 
-const PostsContainer = styled.aside`
-    width: 50vw;
-    border: 1px solid black;
-    background-color: coral;
-
+const Title = styled(Typography)`
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
 `;
 
-const FormContainer = styled.div`
-    width: 50vw;
-    border: 1px solid black;
-    background-color: lightcyan;
+const MainWrapper = styled(Container)`
+    margin: 30px;
 `;
 
 const App = () => {
     return (
         <>
-            <Container>
-                <Header>
-                    <Logo src="" alt=""/>
-                    <Title>Good memories</Title>
-                </Header>
-                <ContentsContainer>
-                    <PostsContainer>
-                        PostContainer
-                        <Posts />
-                    </PostsContainer>
-                    <FormContainer>
-                        FormContainer
-                        <Form />
-                    </FormContainer>
-                </ContentsContainer>
+            <Container maxWidth="lg">
+                <SAppBar>
+                    <img src={mainLogo} alt="메인 로고 이미지"/>
+                    <Title>당신의 소중한 추억을 기록하세요.</Title>
+                </SAppBar>
+                <Grow in>
+                    <MainWrapper>
+                        <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+                            <Grid item xs={12} sm={4}>
+                                <Form />
+                            </Grid>
+                            <Grid item xs={12} sm={7}>
+                                <Posts />
+                            </Grid>
+                        </Grid>
+                    </MainWrapper>
+                </Grow>
             </Container>
             <GlobalStyles />
         </>
