@@ -53,6 +53,18 @@
 
 → [https://github.com/LeeHyungi0622/good-memories/issues/1](https://github.com/LeeHyungi0622/good-memories/issues/1)
 
+**(2) Issue4) Server side - Post를 추가하기 위한 route, controller, model 구성하기**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/4](https://github.com/LeeHyungi0622/good-memories/issues/4)
+
+**(3) Issue7) Client 기본 프레임 만들기**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/7](https://github.com/LeeHyungi0622/good-memories/issues/7)
+
+**(4) Issue9) 메인 페이지 스타일링하기**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/9](https://github.com/LeeHyungi0622/good-memories/issues/9)
+
 # **Project Screen Shots**
 
 **메인 페이지**
