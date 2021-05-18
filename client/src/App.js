@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import styled from 'styled-components';
-import Posts from './components/Posts/Posts';
+import Posts from './components/Posts';
 import Form from './components/Form';
 import GlobalStyles from './GlobalStyles';
 import mainLogo from './images/good_memories.jpeg';
