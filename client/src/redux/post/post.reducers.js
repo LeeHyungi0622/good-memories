@@ -1,18 +1,15 @@
 import { postActionTypes } from './post.types';
 
-export const postReducer = (posts = [], action) => {
+const postReducer = (posts = [], action) => {
     switch (action.type) {
-        case postActionTypes.FETCH_ALL:
-            {
-                return action.payload;
-            }
-        case postActionTypes.CREATE:
-            {
-                return posts;
-            }
+        case postActionTypes.GET_ALL_POST:
+            return action.payload;
+
+        case postActionTypes.CREATE_NEW_POST:
+            return [...posts, action.payload];
         default:
-            return posts
-    };
+            return posts;
+    }
 };
 
 export default postReducer;

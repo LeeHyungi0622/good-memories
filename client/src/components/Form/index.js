@@ -4,7 +4,7 @@ import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import useInput from '../../hooks/useInput';
 import { useDispatch } from 'react-redux';
-// import { createPost } from '../../actions/posts';
+import { createPost } from '../../redux/post/post.actions';
 
 const Form = () => {
     const [creator, onChangeCreator] = useInput('');
@@ -31,7 +31,7 @@ const Form = () => {
             tags,
             selectedFile
         }
-        // dispatch(createPost(newPost));
+        dispatch(createPost(newPost));
     },[title, creator, message, tags, selectedFile, dispatch]);
 
     const clear = useCallback((e) => {
