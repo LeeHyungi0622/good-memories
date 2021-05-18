@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import styled from 'styled-components';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form';
 import GlobalStyles from './GlobalStyles';
 import mainLogo from './images/good_memories.jpeg';
+import { getPosts } from './redux/post/post.actions';
+import { useDispatch } from 'react-redux';
 
 
 const SAppBar = styled(AppBar)`
@@ -33,6 +35,12 @@ const MainWrapper = styled(Container)`
 `;
 
 const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getPosts());
+    },[dispatch]);
+    
     return (
         <>
             <Container maxWidth="lg">

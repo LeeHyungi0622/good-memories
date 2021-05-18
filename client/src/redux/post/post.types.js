@@ -1,4 +1,4 @@
 export const postActionTypes = {
-    FETCH_ALL: 'FETCH_ALL',
-    CREATE: 'CREATE'
+    GET_ALL_POST: 'FETCH_ALL_POST',
+    CREATE_NEW_POST: 'CREATE_NEW_POST'
 };
