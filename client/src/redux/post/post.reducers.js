@@ -6,9 +6,21 @@ const postReducer = (posts = [], action) => {
             return action.payload;
 
         case postActionTypes.CREATE_NEW_POST:
-            return [action.payload, ...posts];
+            return [...posts, action.payload];
 
         case postActionTypes.UPDATE_POST_DATA:
+            return posts.map((post) =>
+                post._id === action.payload._id ?
+                action.payload : post
+            );
+        case postActionTypes.DELETE_POST_DATA:
+            return posts.filter((post) => post._id !== action.payload);
+        case postActionTypes.UPDATE_POST_LIKE:
+            return posts.map((post) =>
+                post._id === action.payload._id ?
+                action.payload : post
+            );
+        case postActionTypes.UPDATE_POST_DISLIKE:
             return posts.map((post) =>
                 post._id === action.payload._id ?
                 action.payload : post

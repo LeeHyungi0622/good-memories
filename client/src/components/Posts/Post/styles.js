@@ -1,9 +1,13 @@
 import { makeStyles } from '@material-ui/core';
 
 export default makeStyles({
+    score: {
+        fontSize: '20px',
+        fontWeight: '600'
+    },
     media: {
         height: 0,
-        paddingTop: '56.25%',
+        paddingTop: '100%',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         backgroundBlendMode: 'darken'
     },

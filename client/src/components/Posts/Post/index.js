@@ -1,17 +1,36 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Card, CardContent, CardMedia, Button, Typography, CardActions } from '@material-ui/core';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import useStyles from './styles';
 import moment from 'moment';
+import { useDispatch } from 'react-redux';
+import { deletePost, updatePostLike, updatePostDislike } from '../../../redux/post/post.actions';
 
 const Post = ({ post, setCurrentId }) => {
+
+    const dispatch = useDispatch();
     const classes = useStyles();
     
     const moreButtonClick = useCallback(() => {
         setCurrentId(post._id);
     }, [post, setCurrentId]);
+
+    const onClickDelete = useCallback(() => {
+        dispatch(deletePost(post._id));
+    }, [dispatch, post._id]);
+
+    const onClickUpdateLike = useCallback(() => {
+        console.log('like updated');
+        dispatch(updatePostLike(post._id));
+    },[dispatch, post._id]);
+
+    const onClickUpdateDislike = useCallback(() => {
+        console.log('dislike update');
+        dispatch(updatePostDislike(post._id));
+    }, []);
 
     return (
         <Card className={classes.card}>
@@ -32,15 +51,16 @@ const Post = ({ post, setCurrentId }) => {
             <CardContent>
                 <Typography className={classes.message} variant="h5" gutterButton>{post.message}</Typography>
             </CardContent>
-
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => {}}>
-                    <ThumbUpAltIcon fontSize="small"/>
-                    Like {post.likeCount}
+                <Button size="small" color="primary" onClick={onClickUpdateLike}>
+                    <EmojiEmotionsIcon color="primary" fontSize="large"/>
                 </Button>
-                <Button size="small" color="primary" onClick={() => {}}>
-                    <DeleteIcon fontSize="small"/>
-                    Delete
+                <Typography variant="body1" color="textPrimary" className={classes.score}>{post.likeCount}</Typography>
+                <Button size="small" color="primary" onClick={onClickUpdateDislike}>
+                    <SentimentVeryDissatisfiedIcon color="secondary" fontSize="large"/>
+                </Button>
+                <Button size="small" style={{ color: 'green'}} onClick={onClickDelete}>
+                    <DeleteIcon fontSize="large"/>
                 </Button>
             </CardActions>
         </Card>

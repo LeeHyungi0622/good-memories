@@ -17,12 +17,19 @@ const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState(INITIAL_POST_STATE);
 
     const onChangeFormData = useCallback((e) => {
-        const { name, value } = e.target;
+            const { name, value } = e.target;
+            setPostData({
+                ...postData,
+                [name]: value
+            })
+    },[postData]);
+
+    const onChangeFileData = useCallback(({base64}) => {
         setPostData({
             ...postData,
-            [name]: value
+            'selectedFile': base64
         })
-    },[postData]);
+    }, [postData]);
 
     const post = useSelector((state) => currentId ? 
                                         state.posts.find((p) => p._id === currentId) :
@@ -35,19 +42,23 @@ const Form = ({ currentId, setCurrentId }) => {
 
     const classes = useStyles();
 
+    const clear = useCallback((e) => {
+        setCurrentId(null);
+        setPostData(INITIAL_POST_STATE);
+    },[setCurrentId, INITIAL_POST_STATE]);
+
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
-
-        if(currentId){
-            dispatch(updatePost(currentId, postData));
-        } else {
+        // currentId가 null인 경우, 새로운 Post를 추가한다.
+        if(currentId === null){
             dispatch(createPost(postData));
+            clear();
+        // currentId가 null이 아닌경우, 
+        } else {
+            dispatch(updatePost(currentId, postData));
+            clear();
         }
-    },[currentId, postData, dispatch]);
-
-    const clear = useCallback((e) => {
-
-    },[]);
+    },[postData, dispatch, clear, currentId]);
 
     return (
         <Paper className={classes.paper}>
@@ -60,9 +71,8 @@ const Form = ({ currentId, setCurrentId }) => {
                 <div className={classes.fileInput}>
                     <FileBase 
                         type="file"
-                        name="selectedFile"
                         multiple={false}
-                        onDone={onChangeFormData}
+                        onDone={onChangeFileData}
                     />
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>등록하기</Button>
