@@ -19,5 +19,3 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
     .then(() => app.listen(PORT, console.log(`https://localhost:${PORT}`)))
     // mongodb connection이 실패하면,
     .catch((err) => console.log(err.message));
-
-mongoose.set('useFindAndModify', false);
