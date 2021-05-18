@@ -57,20 +57,38 @@
 
 → [https://github.com/LeeHyungi0622/good-memories/issues/4](https://github.com/LeeHyungi0622/good-memories/issues/4)
 
+🗓️ 2021.05.14(Fri)
+
 **(3) Issue7) Client 기본 프레임 만들기**
 
 → [https://github.com/LeeHyungi0622/good-memories/issues/7](https://github.com/LeeHyungi0622/good-memories/issues/7)
 
+🗓️ 2021.05.18(Tue)
+
 **(4) Issue9) 메인 페이지 스타일링하기**
 
 → [https://github.com/LeeHyungi0622/good-memories/issues/9](https://github.com/LeeHyungi0622/good-memories/issues/9)
+
+**(5) Issue11) Form 컴포넌트 만들기**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/11](https://github.com/LeeHyungi0622/good-memories/issues/11)
+
+**(6) Issue13) 기존 redux 수정 및 새로운 Post 추가를 위한 기능 추가**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/13](https://github.com/LeeHyungi0622/good-memories/issues/13)
+
+🗓️ 2021.05.19(Wed)
+
+**(4) Issue15) Post 컴포넌트 만들기**
+
+→ [https://github.com/LeeHyungi0622/good-memories/issues/15](https://github.com/LeeHyungi0622/good-memories/issues/15)
 
 # **Project Screen Shots**
 
 **메인 페이지**
 
 <div align="center">
-  <img src="" alt="메인 페이지"/>
+  <img src="images/main.png" alt="메인 페이지"/>
 </div>
 
 # **Installation and Setup Instruction**
