@@ -6,7 +6,7 @@ const postReducer = (posts = [], action) => {
             return action.payload;
 
         case postActionTypes.CREATE_NEW_POST:
-            return [...posts, action.payload];
+            return [action.payload, ...posts];
         default:
             return posts;
     }
