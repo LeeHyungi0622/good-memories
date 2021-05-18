@@ -1,4 +1,5 @@
 export const postActionTypes = {
     GET_ALL_POST: 'GET_ALL_POST',
-    CREATE_NEW_POST: 'CREATE_NEW_POST'
+    CREATE_NEW_POST: 'CREATE_NEW_POST',
+    UPDATE_POST_DATA: 'UPDATE_POST_DATA',
 };

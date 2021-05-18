@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Card, CardContent, CardMedia, Button, Typography, CardActions } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -6,12 +6,12 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import useStyles from './styles';
 import moment from 'moment';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     
-    const moreButtonClick = () => {
-
-    };
+    const moreButtonClick = useCallback(() => {
+        setCurrentId(post._id);
+    }, [post, setCurrentId]);
 
     return (
         <Card className={classes.card}>
@@ -28,8 +28,9 @@ const Post = ({ post }) => {
             <div className={classes.detail}>
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
+            <Typography className={classes.title} variant="h5" gutterButton>{post.title}</Typography>
             <CardContent>
-                <Typography className={classes.title} variant="h5" gutterButton>{post.message}</Typography>
+                <Typography className={classes.message} variant="h5" gutterButton>{post.message}</Typography>
             </CardContent>
 
             <CardActions className={classes.cardActions}>
