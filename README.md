@@ -87,8 +87,20 @@
 
 **메인 페이지**
 
-<div align="center">
-  <img src="images/main.png" alt="메인 페이지"/>
-</div>
+<table>
+  <tr align="center">
+    <td>
+      <img src="images/main.png" alt="메인 페이지"/>
+    </td>
+    <td>
+      <img src="images/main_mobile.png" alt="메인 페이지"/>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>데스크탑</td>
+    <td>모바일</td>
+  </tr>
+
+</table>
 
 # **Installation and Setup Instruction**
